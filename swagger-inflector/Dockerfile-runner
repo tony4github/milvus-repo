@@ -1,0 +1,17 @@
+###____________ run webapp-runner (tomcat 8.5) + swagger-inflector war_____________________
+FROM openjdk:11
+
+WORKDIR /swagger-inflector
+
+COPY ./editor/webapp-runner.jar /swagger-inflector/webapp-runner.jar
+COPY ./editor/swagger-editor.war /swagger-inflector/swagger-editor.war
+COPY inflector.yaml /swagger-inflector/
+
+EXPOSE 8080
+
+##--- For some reasons, wrapped war file (swagger-editor.war via github) is reading 'editor.yaml'
+CMD ["java", "-jar", "-DswaggerUrl=editor.yaml", "/swagger-inflector/webapp-runner.jar", "/swagger-inflector/swagger-editor.war"]
+##--- % docker build -t inflector-tomcat-runner -f Dockerfile-runner .
+##--- % docker run -d -p 8080:8080 inflector-tomcat-runner
+##--- visit 'http://localhost:8080/'
+
