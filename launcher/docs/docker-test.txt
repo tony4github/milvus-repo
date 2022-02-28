@@ -1,0 +1,20 @@
+# run the very first container
+% docker run hello-world
+
+# show containers, including exited. Whereas, '% docker ps' for real time
+% docker ps 
+CONTAINER ID   IMAGE         COMMAND    CREATED         STATUS                     PORTS     NAMES
+3eea6fb79811   hello-world   "/hello"   6 seconds ago   Exited (0) 5 seconds ago             affectionate_wilbur
+
+% docker container stop 3eea6fb79811    
+
+# kill all containers
+% docker container stop $(docker ps -aq)
+
+% docker tag 6bef0803d44e tony4docker2msn/inflector-tomcat-runner:latest   
+% docker push tony4docker2msn/inflector-tomcat-runner:latest
+% docker pull tony4docker2msn/inflector-tomcat-runner:latest   
+% docker run -d -p 8080:8080 tony4docker2msn/inflector-tomcat-runner:latest
+    
+
+

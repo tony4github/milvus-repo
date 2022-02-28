@@ -1,0 +1,9 @@
+###_____________run tomcat 9.0 image via docker hub____________________
+FROM tomcat:9.0-slim
+COPY ./editor/swagger-editor.war /usr/local/tomcat/webapps/
+COPY ./src/main/swagger/openapi.yaml /home/editor.yaml
+ENV JAVA_OPTS "-DswaggerUrl=/home/editor.yaml"
+CMD ["catalina.sh", "run"]
+##--- % docker build -t inflector-tomcat-image -f Dockerfile-image .
+##--- % docker run -d -p 8080:8080 inflector-tomcat-image
+##--- visit 'http://localhost:8080/swagger-editor/'
