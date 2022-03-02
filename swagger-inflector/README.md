@@ -25,5 +25,13 @@ So far (Jan 2021), i have found 3 approaches to run swagger-inflector executable
 
 Next, i will try the fourth approach that is to pull 'FROM tomcat:9.0-slim' as a base image. 
 
+BTW, for a better user experience, pls change swagger with the following for 'Try it out' buttom
+
+openapi: 3.0.2
+servers:
+  - url: http://localhost/v3
+
+
+
 
 
