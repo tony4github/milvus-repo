@@ -13,7 +13,7 @@ So far (Jan 2021), i have found 3 approaches to run swagger-inflector executable
     Built a webapp-runner.jar by 'mvn package'
     
     Then, run this. it works (make sure appropriate jar files and folders)
-    'java -jar assembly/target/webapp-runner.jar /Users/milvus-workspace/swagger.io/swagger-inflector/editor/swagger-editor.war  --port 8000'
+    'java -Dconfig=editor/inflector.yaml -jar assembly/target/webapp-runner.jar /Users/milvus-workspace/swagger.io/swagger-inflector/editor/swagger-editor.war  --port 8000'
 
 3. Build tomcat runner via a docker image
     From this gitHub repo, Dockerfile can be found as 'Dockerfile-runner'
