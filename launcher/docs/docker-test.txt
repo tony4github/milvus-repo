@@ -11,10 +11,20 @@ CONTAINER ID   IMAGE         COMMAND    CREATED         STATUS                  
 # kill all containers
 % docker container stop $(docker ps -aq)
 
-% docker tag 6bef0803d44e tony4docker2msn/inflector-tomcat-runner:latest   
-% docker push tony4docker2msn/inflector-tomcat-runner:latest
-% docker pull tony4docker2msn/inflector-tomcat-runner:latest   
-% docker run -d -p 8080:8080 tony4docker2msn/inflector-tomcat-runner:latest
+# label an image and push/pull
+% docker image ls
+REPOSITORY                                TAG        IMAGE ID       CREATED        SIZE
+inflector-tomcat-image                    latest     5809f6636b61   21 hours ago   441MB
+
+% docker tag 5809f6636b61 tony4docker2msn/inflector-tomcat-image:latest   
+% docker image ls                                                       
+REPOSITORY                                TAG        IMAGE ID       CREATED        SIZE
+inflector-tomcat-image                    latest     5809f6636b61   21 hours ago   441MB
+tony4docker2msn/inflector-tomcat-image    latest     5809f6636b61   21 hours ago   441MB
+
+% docker push tony4docker2msn/inflector-tomcat-image:latest
+% docker pull tony4docker2msn/inflector-tomcat-image:latest   
+% docker run -d -p 8080:8080 tony4docker2msn/inflector-tomcat-image:latest
     
 
 
