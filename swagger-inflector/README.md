@@ -23,7 +23,15 @@ So far (Jan 2021), i have found 3 approaches to run swagger-inflector executable
     % docker run -d -p 8080:8080 tony4docker2msn/inflector-tomcat-runner:latest
     Then, visit the url of http://localhost:8080/
 
-Next, i will try the fourth approach that is to pull 'FROM tomcat:9.0-slim' as a base image. 
+4. Pull 'FROM tomcat:9.0-slim' as a base image. 
+    From this gitHub repo, Dockerfile can be found as 'Dockerfile-image'
+
+    The docker image stays in Docker Hub publicly. Pull the image tag of 'tony4docker2msn/inflector-tomcat-image:latest'. 
+    % docker pull tony4docker2msn/inflector-tomcat-image:latest   
+    % docker run -d -p 8080:8080 tony4docker2msn/inflector-tomcat-image:latest
+    Then, visit the url of http://localhost:8080/swagger-editor/
+
+
 
 BTW, for a better user experience, pls change swagger with the following for 'Try it out' buttom
 
