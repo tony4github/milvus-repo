@@ -38,3 +38,5 @@ CMD ["catalina.sh", "run"]
 ##--- % docker run -d -p 8080:8080 tony4docker2msn/inflector-tomcat-image:latest
 ##--- 3. Hit the tomcat server
 ##--- visit 'http://localhost:8080/swagger-editor/'
+##--- ATTN: it is not 'http://localhost:8080/'
+##--- A context path of 'swagger-edit/' required after docker 'COPY' the war file 
