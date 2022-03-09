@@ -9,8 +9,10 @@ ENV JAVA_OPTS "-DswaggerUrl=/home/editor.yaml"
 CMD ["catalina.sh", "run"]
 
 ##--- A fix made to run swagger-editor.war under tomcat:9.0-slim image
-##--- Inside of the war, remove default content path of '/v1/specs'. 
-##--- It should look like this in 'index.html'
+##--- I see an error - "Failed to load API definition" for "undefined /v1/specs"
+##--- Inside 'index.html', remove default content path of '/v1/specs'. 
+##--- You may see this, SwaggerEditorBundle({...}) takes a param, a line like 'url: "/v1/specs",'
+##--- To eliminate the erro, it should look like this 
 ##---   const editor = SwaggerEditorBundle({
 ##---       dom_id: '#swagger-editor',
 ##---       layout: 'StandaloneLayout',
