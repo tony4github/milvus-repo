@@ -13,7 +13,7 @@ The underlying library integrating swagger to SpringBoot is [springdoc-openapi](
 Start your server as an simple java application  
 
 You can view the api documentation in swagger-ui by pointing to  
-http://localhost:8080/v3
+http://localhost:8080/v3 or http://localhost:8080/v3/swagger-ui
 -   not sure what made this wrong - http://localhost:8080/  
 
 
